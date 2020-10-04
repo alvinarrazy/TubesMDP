@@ -5,13 +5,14 @@ import Navbar from './components/Navbar';
 import { Button } from './components/Button';
 import HeroSection from './components/HeroSection';
 import Home from './components/pages/Home';
+import Registration from './components/pages/Registration';
 
 function App() {
   return (
     <>
     <Router>
       <Switch>
-        <Route path='/' exact component={Home}/>
+        <Route path='/' exact component={Registration}/>
       </Switch>
     </Router>
     </>
