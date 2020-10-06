@@ -1,12 +1,14 @@
 import {userConstants} from '../types';
-
+import {userService} from '../services/userService';
 
 export const register = (User) => {
     return dispatch => {
         dispatch({
-            type: userConstants.REGISTER_SUCCESS,
+            type: userConstants.REGISTER_REQUEST,
             User: User
         })
+
+        userService.register(User);
     }
 }
 
