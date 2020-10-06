@@ -43,8 +43,8 @@ class Registration extends React.Component {
 		this.setState({
 			submitted: true
 		});
-		console.log(User.fullname)
-		//this.props.register(User)
+		// console.log(User.fullname)
+		this.props.register(User)
 	  }
 	  //PAKE YANG INI, UDAH BISA READ FULLNAME DI CONSOLE LOG
 	  //TINGGAL PIKIRIN CARA PAKE "this.props.register(User)"
@@ -57,6 +57,7 @@ class Registration extends React.Component {
 
 
 	render(){
+		console.log(this.props);
 		const {User} = this.state;
 		return (
         <>
@@ -86,10 +87,12 @@ const mapStateToProps = (state, ownProps) => {
 
   const mapDispatchToProps = (dispatch) => {
 	return {
-	  register: register
+	  register: User => dispatch(register(User))
 	}
   };
 
   export default connect(mapStateToProps, mapDispatchToProps)(Registration);
 
   //PIKIRIN JUGA GIMANA CARANYA PINDAHIN PROPS KE STORAGE
+  /*(Update 1) UDAH BISA KEBACA DI CONSOLE LOG PREV STATE = KOSONG 
+  NEXT STATE = User: {fullname dll}*/
