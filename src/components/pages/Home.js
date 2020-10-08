@@ -3,7 +3,7 @@ import '../../App.css';
 import HeroSection from '../HeroSection';
 import {Navbar} from '../Navbar';
 
-function Home(){
+function HomePage(){
     return(
         <>
             <Navbar/>
@@ -12,4 +12,4 @@ function Home(){
     )
 }
 
-export default Home;
+export default HomePage;

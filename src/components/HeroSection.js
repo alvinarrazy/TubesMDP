@@ -21,7 +21,16 @@ function HeroSection() {
             </Button>
         </Link>
         
-        
+        <Link to='/sign-up'>
+            <Button
+              className='btns'
+              buttonStyle='btn--outline'
+              buttonSize='btn--large'
+            >
+              SIGN UP
+            </Button>
+        </Link>
+
         <Button
           className='btns'
           buttonStyle='btn--primary'
@@ -33,6 +42,8 @@ function HeroSection() {
         >
           WATCH CHANNEL <i className='far fa-play-circle' />
         </Button>
+
+        
       </div>    
         </div>
     )

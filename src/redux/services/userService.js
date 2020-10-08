@@ -6,6 +6,7 @@ import {userConstants} from '../types';
 export const userService = {    
     logout,
     register,
+    login
 };
 
 function logout() {
@@ -13,8 +14,12 @@ function logout() {
     localStorage.removeItem('user');
 }
 
-function register(User) {
-    axios.post(`${API}/${userConstants.REGISTER_REQUEST}`, User)
+function register(newUser) {
+    axios.post(`${API}/${userConstants.REGISTER_REQUEST}`, newUser)
+}
+//PIKIRIN CARA LANJUTIN LOGINNYA
+function login(user){
+    axios.post(`${API}/${userConstants.LOGIN_REQUEST}`, user)
 }
 
 // function handleResponse(response) {

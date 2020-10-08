@@ -22,7 +22,7 @@ function Navbar() {
       }, []);
 
     window.addEventListener('resize', showButton);
-
+    
     return (
         <>
             <nav className="navbar">
@@ -50,7 +50,13 @@ function Navbar() {
                                 Accounts
                             </Link>
                         </li>
-
+                        <Link
+                            to='/login'
+                            className='nav-links-mobile'
+                            onClick={closeMobileMenu}
+                        >
+                            Log in
+                        </Link>  
                         <Link
                             to='/sign-up'
                             className='nav-links-mobile'
@@ -59,7 +65,7 @@ function Navbar() {
                             Sign Up
                         </Link>                        
                     </ul>
-                    {button && <Link to='/sign-up'><Button buttonStyle='btn--outline'>SIGN UP</Button></Link>}
+                    {button && <Link to='/login'><Button buttonStyle='btn--outline'>LOG IN</Button></Link>}
                 </div>
             </nav>
         </>
@@ -72,7 +78,7 @@ function NavbarOnlyLogo(){
         <nav className="navbar">
             <div className="navbar-container">
                 <Link to="/" className="navbar-logo">
-                    Himaskom 2020
+                    HIMASKOM 2020
                     <img src="/images/logo-himaskom.png"/>
                 </Link>
             </div>

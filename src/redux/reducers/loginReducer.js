@@ -8,12 +8,11 @@ export function authentication(state = initialState, action) {
   switch (action.type) {
     case userConstants.LOGIN_REQUEST:
       return {
-        loggingIn: true,
-        user: action.user
+        loggingIn: true,//state yang dikirim ke global, bisa diganti jg di reducer kalo dibutuhin di component lain
       };
     case userConstants.LOGIN_SUCCESS:
       return {
-        loggedIn: true,
+        loggedIn:true,
         user: action.user
       };
     case userConstants.LOGIN_FAILURE:
