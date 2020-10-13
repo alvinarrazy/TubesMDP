@@ -1,6 +1,6 @@
 import {userConstants} from '../types';
 import {userService} from '../services/userService';
-import {history} from '../history';
+import {history} from '../helpers/history';
 
 export const login = (user) => {
     return dispatch => {

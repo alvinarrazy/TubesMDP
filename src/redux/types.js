@@ -1,11 +1,11 @@
 export const userConstants = {
-    REGISTER_REQUEST: 'registering',
-    REGISTER_SUCCESS: 'registering_success',
-    REGISTER_FAILURE: 'registering_failed',
+    REGISTER_REQUEST: 'register',
+    REGISTER_SUCCESS: 'register_success',
+    REGISTER_FAILURE: 'register_failed',
 
-    LOGIN_REQUEST: 'logining',
-    LOGIN_SUCCESS: 'logining_success',
-    LOGIN_FAILURE: 'logining_failed',
+    LOGIN_REQUEST: 'login',
+    LOGIN_SUCCESS: 'login_success',
+    LOGIN_FAILURE: 'login_failed',
     
     LOGOUT: 'USERS_LOGOUT',
 
