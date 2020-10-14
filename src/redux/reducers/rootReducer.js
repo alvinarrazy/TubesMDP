@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 
 //reducers
-import {authentication} from './authenticationReducer';
+import {authentication} from './loginReducer';
 import {register} from './registerReducer';
 
 

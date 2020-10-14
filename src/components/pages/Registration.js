@@ -4,14 +4,14 @@ import '../styles/RegForm.css';
 import {register} from '../../redux/actions/RegisterAction'
 import {connect} from 'react-redux';
 
-class Registration extends React.Component {
+class RegistrationPage extends React.Component {
 	constructor(props){
 		super(props);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		 
 		this.state = {
-			User:{
+			newUser:{
 				fullname: '',
 				username: '',
 				email: '',
@@ -24,51 +24,39 @@ class Registration extends React.Component {
 
 	  handleChange(event) {
 			const { name, value } = event.target;
-			const { User } = this.state;
+			const { newUser } = this.state;
 			this.setState({
-				User: {
-					...User,
+				newUser: {
+					...newUser,
 					[name]: value
 				}
 			});
 		}	
-		//PAKE YANG INI DH BISA INPUT
-
-	  //-----------------------------------------handleSubmit problem------------------------------//
-
 
 	  handleSubmit(e){
 		e.preventDefault();
-		const {User} = this.state;
+		const {newUser} = this.state;
 		this.setState({
 			submitted: true
 		});
-		// console.log(User.fullname)
-		this.props.register(User)
+        if (newUser.fullname && newUser.username && newUser.email && newUser.password) {
+			// console.log(newUser.fullname)
+			this.props.register(newUser)
+		}
 	  }
-	  //PAKE YANG INI, UDAH BISA READ FULLNAME DI CONSOLE LOG
-	  //TINGGAL PIKIRIN CARA PAKE "this.props.register(User)"
-
-
-
-	  //-----------------------------------------handleSubmit problem------------------------------//
-
-
-
 
 	render(){
-		console.log(this.props);
-		const {User} = this.state;
+		const {newUser} = this.state;
 		return (
         <>
         <NavbarOnlyLogo/>
-        <div class="login-form">
+        <div className="login-form">
 			<h1>Join us NOW!!!!</h1>
 			<form onSubmit={this.handleSubmit}>
-				<input type="text" onChange={this.handleChange} name="fullname" value={User.fullname} placeholder="Full Name" required/>				
-				<input type="text" onChange={this.handleChange} name="username" value={User.username} placeholder="Username" required/>				
-				<input type="text" onChange={this.handleChange} name="email"value={User.email} placeholder="Email" required/>				
-				<input type="password" placeholder="Password" onChange={this.handleChange} name="password" value={User.password} required/>
+				<input type="text" onChange={this.handleChange} name="fullname" value={newUser.fullname} placeholder="Full Name" required/>				
+				<input type="text" onChange={this.handleChange} name="username" value={newUser.username} placeholder="Username" required/>				
+				<input type="text" onChange={this.handleChange} name="email"value={newUser.email} placeholder="Email" required/>				
+				<input type="password" placeholder="Password" onChange={this.handleChange} name="password" value={newUser.password} required/>
 				<input type="submit" value="Sign Up"/>
 			</form>
 		</div>
@@ -80,19 +68,15 @@ class Registration extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
 	return {
-	  User: state.User
+	  registering: state.registering
 	}
   };
 
 
   const mapDispatchToProps = (dispatch) => {
 	return {
-	  register: User => dispatch(register(User))
+	  register: newUser => dispatch(register(newUser))
 	}
   };
 
-  export default connect(mapStateToProps, mapDispatchToProps)(Registration);
-
-  //PIKIRIN JUGA GIMANA CARANYA PINDAHIN PROPS KE STORAGE
-  /*(Update 1) UDAH BISA KEBACA DI CONSOLE LOG PREV STATE = KOSONG 
-  NEXT STATE = User: {fullname dll}*/
+  export default connect(mapStateToProps, mapDispatchToProps)(RegistrationPage);

@@ -1,14 +1,14 @@
 import {userConstants} from '../types';
 import {userService} from '../services/userService';
 
-export const register = (User) => {
+export const register = (newUser) => {
     return dispatch => {
         dispatch({
             type: userConstants.REGISTER_REQUEST,
-            User: User
+            // newUser: newUser //Tes apakah kalo di komen gk bisa update database
         })
 
-        userService.register(User);
+        userService.register(newUser)
     }
 }
 
@@ -29,7 +29,7 @@ export const register = (User) => {
 //             );
 //     };
 
-//     function request(user) { return { type: userConstants.REGISTER_REQUEST, user } }
-//     function success(user) { return { type: userConstants.REGISTER_SUCCESS, user } }
+//     function request(newUser) { return { type: userConstants.REGISTER_REQUEST, newUser } }
+//     function success(newUser) { return { type: userConstants.REGISTER_SUCCESS, newUser } }
 //     function failure(error) { return { type: userConstants.REGISTER_FAILURE, error } }
 // }
