@@ -2,6 +2,7 @@
 import {API} from '../../config';
 import axios from 'axios';
 import {userConstants} from '../types';
+import {authHeader} from '../helpers/auth-header';
 
 export const userService = {    
     logout,
@@ -24,6 +25,7 @@ axios.interceptors.request.use(
     }
   );
 
+  //tambahin fitur logout
 function logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
@@ -32,11 +34,16 @@ function logout() {
 function register(newUser) {
     axios.post(`${API}/${userConstants.REGISTER_REQUEST}`, newUser)
 }
-//PIKIRIN CARA LANJUTIN LOGINNYA
+
+
+//Udah bisa login, tambah fitur logout
 async function login(user){
-    const response = await axios.post(`${API}/${userConstants.LOGIN_REQUEST}`, user);
-    console.log(JSON.stringify(response));
-    //slocalStorage.setItem(localStorage.setItem('user', JSON.stringify(response)))
+    const data = await axios.post(`${API}/${userConstants.LOGIN_REQUEST}`, user)
+    console.log(data);
+    console.log(data.data);
+    localStorage.setItem('user', JSON.stringify(data.data));
+    return data.data;
+    //console.log(localStorage.getItem('user'));
 }
 
 

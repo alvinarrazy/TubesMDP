@@ -50,7 +50,7 @@ class RegistrationPage extends React.Component {
 		return (
         <>
         <NavbarOnlyLogo/>
-        <div class="login-form">
+        <div className="login-form">
 			<h1>Join us NOW!!!!</h1>
 			<form onSubmit={this.handleSubmit}>
 				<input type="text" onChange={this.handleChange} name="fullname" value={newUser.fullname} placeholder="Full Name" required/>				

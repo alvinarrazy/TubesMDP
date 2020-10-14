@@ -16,4 +16,4 @@ const store = createStore(rootReducer,
         loggerMiddleware
     ));
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('app'));

@@ -46,7 +46,7 @@ class LoginPage extends React.Component {
 		return(
 			<>
 			<NavbarOnlyLogo/>
-			<div class="login-form">
+			<div className="login-form">
 				<h1>Log in</h1>
 				<form onSubmit={this.handleSubmit}>
 					<input type="text" onChange={this.handleChange} name="username" value={user.username} placeholder="Username" required/>				
