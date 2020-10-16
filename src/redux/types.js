@@ -7,7 +7,7 @@ export const userConstants = {
     LOGIN_SUCCESS: 'login_success',
     LOGIN_FAILURE: 'login_failed',
     
-    LOGOUT: 'USERS_LOGOUT',
+    LOGOUT: 'logout',
 
     GETALL_REQUEST: 'USERS_GETALL_REQUEST',
     GETALL_SUCCESS: 'USERS_GETALL_SUCCESS',

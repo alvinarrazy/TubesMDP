@@ -1,8 +1,9 @@
 import React from 'react';
-import {NavbarOnlyLogo} from '../Navbar';
+import NavbarOnlyLogo from '../NavbarOnlyLogo';
 import '../styles/RegForm.css';
 import {login} from '../../redux/actions/LoginAction';
 import {connect} from 'react-redux';
+import {history} from '../../redux/helpers/history';
 
 class LoginPage extends React.Component {
 	constructor(props){
@@ -38,6 +39,7 @@ class LoginPage extends React.Component {
         if (user.username && user.password) {
 			this.props.login(user);
 			console.log(user.username + user.password);
+			this.props.history.push('/');
         }
 	}
     render(){

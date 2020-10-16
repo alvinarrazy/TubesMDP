@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavbarOnlyLogo} from '../Navbar';
+import NavbarOnlyLogo from '../NavbarOnlyLogo';
 import '../styles/RegForm.css';
 import {register} from '../../redux/actions/RegisterAction'
 import {connect} from 'react-redux';
