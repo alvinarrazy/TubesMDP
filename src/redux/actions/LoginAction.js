@@ -13,7 +13,6 @@ export const login = (user) => {
         .then(
             user => { 
                 dispatch(success(user));
-                history.push('/');
             },
             error => {
                 // userService.logout(); //auto logout kalo error

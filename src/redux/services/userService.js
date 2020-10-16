@@ -29,6 +29,7 @@ axios.interceptors.request.use(
 function logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
+    console.log("user udah dibuang");
 }
 
 function register(newUser) {

@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import { Button } from './Button';
 import './styles/Navbar.css';
+import {connect} from 'react-redux';
 
-function Navbar() {
+const Navbar = ({loggedIn, user}) => {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
     const handleClick = () => setClick(!click);
@@ -23,6 +24,8 @@ function Navbar() {
 
     window.addEventListener('resize', showButton);
     
+    console.log(loggedIn);
+    console.log(user);
     return (
         <>
             <nav className="navbar">
@@ -34,6 +37,7 @@ function Navbar() {
                     <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                     </div>
+                    {loggedIn &&
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
@@ -48,6 +52,23 @@ function Navbar() {
                         <li className='nav-item'>
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                                 Accounts
+                            </Link>
+                        </li>     
+                        <Link
+                            to='/logout'
+                            className='nav-links-mobile'
+                            onClick={closeMobileMenu}
+                        >
+                            Log out
+                        </Link>                   
+                    </ul>
+                    }
+
+                    {!loggedIn &&
+                    <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                        <li className='nav-item'>
+                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                                Home 
                             </Link>
                         </li>
                         <Link
@@ -65,28 +86,22 @@ function Navbar() {
                             Sign Up
                         </Link>                        
                     </ul>
-                    {button && <Link to='/login'><Button buttonStyle='btn--outline'>LOG IN</Button></Link>}
+                    }
+                    {!loggedIn && button && <Link to='/login'><Button buttonStyle='btn--outline'>LOG IN</Button></Link>}
+                    {loggedIn && button && <Link to='/logout'><Button buttonStyle='btn--outline'>LOG OUT</Button></Link>}
                 </div>
             </nav>
         </>
     )
 }
 
-function NavbarOnlyLogo(){
-    return(
-        <>
-        <nav className="navbar">
-            <div className="navbar-container">
-                <Link to="/" className="navbar-logo">
-                    HIMASKOM 2020
-                    <img src="/images/logo-himaskom.png"/>
-                </Link>
-            </div>
-        </nav>
-        </>
-    )
+
+const mapStateToProps = (state) => {
+	return{
+        loggedIn: state.authentication.loggedIn,
+        user: state.authentication.user//harus lengkap brooo
+	}
 }
 
 
-export {NavbarOnlyLogo};
-export {Navbar};
+export default connect(mapStateToProps)(Navbar);
