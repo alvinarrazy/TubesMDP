@@ -17,3 +17,8 @@ export const userConstants = {
     DELETE_SUCCESS: 'USERS_DELETE_SUCCESS',
     DELETE_FAILURE: 'USERS_DELETE_FAILURE'    
 };
+
+export const postConstant = {
+    ADD_POST: 'post/add-post',
+    GET_ALL_POST: 'post/get-all-post'
+};
