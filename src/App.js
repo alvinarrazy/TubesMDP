@@ -8,6 +8,7 @@ import HomePage from './components/pages/Home';
 import RegistrationPage from './components/pages/Registration';
 import LoginPage from './components/pages/Login';
 import Logout from './components/pages/Logout';
+import PostPage from './components/pages/Posts';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path='/sign-up' exact component={RegistrationPage}/>
         <Route path='/login' exact component={LoginPage}/>
         <Route path='/logout' exact component={Logout}/>
+        <Route path='/timeline' exact component={PostPage}/>
         <Redirect from="*" to="/" />
       </Switch>
     </Router>

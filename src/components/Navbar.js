@@ -45,7 +45,7 @@ const Navbar = ({loggedIn, user}) => {
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                            <Link to='/timeline' className='nav-links' onClick={closeMobileMenu}>
                                 Your Store
                             </Link>
                         </li>
