@@ -32,7 +32,7 @@ class PostPage extends React.Component {
 			<Fragment>
 				{
 					this.state.posts.map(post => {
-						return <CardItem text={post.text} label={post.label}/>
+						return <CardItem text={post.text} label={post.label}/>//Belum ditambahin path gambarnya
 					})
 				}
 			</Fragment>
