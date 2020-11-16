@@ -50,10 +50,11 @@ const Navbar = ({loggedIn, user}) => {
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                                Accounts
+                            <Link to='/ticket-order' className='nav-links' onClick={closeMobileMenu}>
+                                TIKET
                             </Link>
-                        </li>     
+                        </li>
+                             
                         <Link
                             to='/logout'
                             className='nav-links-mobile'
@@ -69,6 +70,11 @@ const Navbar = ({loggedIn, user}) => {
                         <li className='nav-item'>
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                                 Home 
+                            </Link>
+                        </li>
+                        <li className='nav-item'>
+                            <Link to='/ticket-order' className='nav-links' onClick={closeMobileMenu}>
+                                TIKET
                             </Link>
                         </li>
                         <Link
