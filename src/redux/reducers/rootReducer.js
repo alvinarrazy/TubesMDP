@@ -1,12 +1,13 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 
 //reducers
-import {authentication} from './loginReducer';
-import {register} from './registerReducer';
+import { authentication } from './loginReducer';
+import { register } from './registerReducer';
+import { openNav } from './navReducer';
 
 
 export const rootReducer = combineReducers({
-    authentication,
-    register
-  });
-  
+  authentication,
+  register,
+  openNav
+});

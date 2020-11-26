@@ -1,0 +1,19 @@
+.header {
+  height: 60px;
+  background: #B20000;
+  color: black;
+}
+
+.header .left{
+  float: left;
+  width: auto;
+  font-size: 20px;
+  padding: 7px 0px 0px 10px;
+  font-weight: bold;
+}
+
+.header .right{
+  float: right;
+  width: 30%;
+  text-align: end;
+}

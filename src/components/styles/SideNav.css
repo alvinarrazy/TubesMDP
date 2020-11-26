@@ -1,0 +1,135 @@
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #E50000;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a, Link {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidenav a button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  color: white;
+  font-size: 50px;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: whitesmoke;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.sidenav .logoutbtn {
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.sidenav .account-container{
+  margin: 0 5px 0 5px;
+  background-color: #7fbfff;
+  height: 150px;
+  border-bottom-right-radius: 24px;
+  -webkit-box-shadow: 0px 1px 10px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 1px 10px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 1px 10px 0px rgba(50, 50, 50, 0.75);
+}
+
+.sidenav .account-container .account-pic{
+  float: left;
+  width: 20%;
+}
+
+.sidenav .account-container .account-pic img{
+  height: 100px;
+  width: auto;
+  border-radius: 10%;
+  margin-left: 10px;
+  margin-top:10px;
+}
+
+.sidenav .account-container .account-detail{
+  float: right;
+  width: 60%;
+  margin-top: 15px;
+}
+
+.sidenav .account-container .account-detail a{
+  padding: 0 0 10px 0;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.header {
+  height: 60px;
+  background: #3299ff;
+  color: white;
+}
+
+.header .left{
+  float: left;
+  width: auto;
+  margin: 0 auto;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header .right{
+  float: right;
+  width: 30%;
+  text-align: end;
+  padding-right: 15px;
+}
+
+.header .left .hamburg button{
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  color: white;
+  font-size: 40px;
+}

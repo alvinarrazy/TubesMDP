@@ -22,3 +22,7 @@ export const postConstant = {
     ADD_POST: 'post/add-post',
     GET_ALL_POST: 'post/get-all-post'
 };
+
+export const navConstant = {
+    OPEN_NAV: 'OPEN_NAV'  
+  };
