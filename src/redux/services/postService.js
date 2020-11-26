@@ -9,7 +9,8 @@ export const postService = {
 };
 
 async function getAllPost(){
-    const data = await axios.get(`${API}/${postConstant.GET_ALL_POST}`)
+    const data = await axios.get('http://localhost:3001/api/post/getcard')
+    // const data = await axios.get(`${API}/${postConstant.GET_ALL_POST}`)
     console.log(data.data);
     localStorage.setItem('posts', JSON.stringify(data.data.posts));
     return data.data.posts;

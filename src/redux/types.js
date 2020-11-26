@@ -20,7 +20,7 @@ export const userConstants = {
 
 export const postConstant = {
     ADD_POST: 'post/add-post',
-    GET_ALL_POST: 'post/get-all-post'
+    GET_ALL_POST: 'post/getcard'
 };
 
 export const navConstant = {

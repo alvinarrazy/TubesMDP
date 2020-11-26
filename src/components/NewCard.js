@@ -19,27 +19,23 @@ function NewCard(props) {
             <table>
               <tr>
                 <td>HP</td>
-                <td2>100</td2>
+                <td2>{props.hp}</td2>
                 <td>MP</td>
-                <td2>100</td2>
+                <td2>{props.mp}</td2>
               </tr>
               <tr>
                 <td>ATK</td>
-                <td2>100</td2>
+                <td2>{props.atk}</td2>
                 <td>DEF</td>
-                <td2>100</td2>
+                <td2>{props.def}</td2>
               </tr>
               <tr>
-                <td>MATK</td>
-                <td2>100</td2>
-                <td>MDEF</td>
-                <td2>100</td2>
               </tr>
               <tr>
                 <td>SPD</td>
-                <td2>100</td2>
+                <td2>{props.spd}</td2>
                 <td>ACC</td>
-                <td2>100</td2>
+                <td2>{props.acc}</td2>
               </tr>
             </table>
           </div>
