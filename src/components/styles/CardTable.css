@@ -1,0 +1,9 @@
+.card-table{
+    width: auto;
+    height: auto;
+    margin: 50px 20%;
+}
+
+.card-table td{
+    padding: 20px;
+}
