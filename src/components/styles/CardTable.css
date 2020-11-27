@@ -1,9 +1,11 @@
-.card-table{
-    width: auto;
-    height: auto;
-    margin: 50px 20%;
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 20px;
+    justify-content: center;
 }
 
-.card-table td{
+.grid-item {
     padding: 20px;
+    text-align: center;
 }

@@ -46,47 +46,27 @@ class CardPage extends React.Component {
         return (
             <>
                 <SideNav />
-                <div className='card-table'>
-                    <table>
-                        <Fragment>
-                            {
-                                
-                                this.state.posts.map(post => {
-                                    return (
-                                        <td><NewCard src={STATIC_PATH + post.image}
-                                            name={post.name}
-                                            description={post.description}
-                                            hp={post.hp}
-                                            mp={post.mp}
-                                            atk={post.atk}
-                                            def={post.def}
-                                            spd={post.spd}
-                                            acc={post.acc}
-                                        />
-                                        </td>
-                                    )
-                                })
-                            }
-                        </Fragment>
-                        {/* <tr>
-                            <td><NewCard src='/images/Dark-Magician.jpg' name='Dark Magician' description='tes' /></td>
-                            <td><NewCard src='/images/Dark-Magician.jpg' name='Dark Magician' description='tes' /></td>
-                            <td><NewCard src='/images/Dark-Magician.jpg' name='Dark Magician' description='tes' /></td>
-                        </tr>
-                        <tr>
-                            <td><NewCard src='/images/Dark-Magician.jpg' name='Dark Magician' description='tes' /></td>
-                            <td><NewCard src='/images/Dark-Magician.jpg' name='Dark Magician' description='tes' /></td>
-                            <td><NewCard src='/images/Dark-Magician.jpg' name='Dark Magician' description='tes' /></td>
-                        </tr>
-                        <tr>
-                            <td><NewCard src='/images/Dark-Magician.jpg' name='Dark Magician' description='tes' /></td>
-                            <td><NewCard src='/images/Dark-Magician.jpg' name='Dark Magician' description='tes' /></td>
-                            <td><NewCard src='/images/Dark-Magician.jpg' name='Dark Magician' description='tes' /></td>
-                        </tr> */}
-                    </table>
+                <div className='grid-container'>
+                    <Fragment>
+                        {
+                            this.state.posts.map(post => {
+                                return (
+                                    <div className='grid-item'><NewCard src={STATIC_PATH + post.image}
+                                        name={post.name}
+                                        description={post.description}
+                                        hp={post.hp}
+                                        mp={post.mp}
+                                        atk={post.atk}
+                                        def={post.def}
+                                        spd={post.spd}
+                                        acc={post.acc}
+                                    />
+                                    </div>
+                                )
+                            })
+                        }
+                    </Fragment>
                 </div>
-
-
             </>
         )
 
