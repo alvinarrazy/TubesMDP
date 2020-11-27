@@ -13,3 +13,15 @@ export const getAllPost = () => {
         })
     }
 }
+
+export const postNewCard = () => {
+    return dispatch => {
+        dispatch({
+            type: postConstant.ADD_POST
+        })
+        postService.postNewCard()
+        .then(result => {
+            console.log(result)
+        })
+    }
+}

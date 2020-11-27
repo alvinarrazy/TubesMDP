@@ -1,4 +1,6 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import { postNewCard } from '../../redux/actions/PostAction';
 
 //Components
 import Navbar from '../Navbar';
@@ -12,73 +14,97 @@ import '../styles/NewCard.css';
 import '../styles/Footer.css';
 import '../styles/AddCardTable.css';
 
-class CardPage extends React.Component {
+class AddCardPage extends React.Component {
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         
-        // this.state = {
-        //     name: 
-        // }
+        this.state = {
+            newCard: {
+                name: '',
+                description: '',
+                image: '',
+                hp: '',
+                mp: '',
+                atk: '',
+                def: '',
+                spd: '',
+                acc: '',
+            }
+        }
     }
 
     handleChange(event) {
         const { name, value } = event.target;
+        const { newCard } = this.state;
         this.setState({
-            ...this.state,
-            [name]: value
-
+            newCard: {
+                ...newCard,
+                [name]: value
+            }
         });
     }
 
     handleSubmit(e){
 		e.preventDefault();
-		const {newUser} = this.state;
-		this.setState({
-			submitted: true
-		});
-        if (newUser.fullname && newUser.username && newUser.email && newUser.password) {
-			// console.log(newUser.fullname)
-			this.props.register(newUser)
+		const {newCard} = this.state;
+        if (newCard.name && newCard.description && newCard.image && newCard.hp && newCard.mp && newCard.atk && newCard.def && newCard.spd && newCard.acc) {
+			console.log(newCard.name)
+            this.props.register(newCard)
+            this.setState({
+                newCard: {
+                    name: '',
+                    description: '',
+                    image: '',
+                    hp: '',
+                    mp: '',
+                    atk: '',
+                    def: '',
+                    spd: '',
+                    acc: '',
+                }
+            })
+            this.props.history.push('/');
 		}
 	  }
 
     render() {
+        const {newCard} = this.state;
         return (
             <>
                 <SideNav />
                 <h2 style={{ position: 'absolute', top: '70px', left: '200px' }}>Add new Card</h2>
                 <div className="container">
-                    <form>
+                    <form onSubmit={this.handleSubmit}>
                         <div className="firstcol">
                             <table>
                                 <tr>
                                     <td><label>Name :</label></td>
-                                    <td1><input type='text' name='name' /></td1>
+                                    <td1><input value={newCard.name} onChange={this.handleChange} type='text' name='name' required/></td1>
                                     <td><label>Image :</label></td>
-                                    <td1><input type='file' name=''/></td1>
+                                    <td1><input value={newCard.image} onChange={this.handleChange}  type='file' name='image' required/></td1>
                                 </tr>
                                 <tr>
                                     <td><label>Health Point :</label></td>
-                                    <td1><input type='text' name='hp' /></td1>
+                                    <td1><input value={newCard.hp} onChange={this.handleChange}  type='text' name='hp' required/></td1>
                                     <td><label>Magic Point :</label></td>
-                                    <td1><input type='text' name='mp' /></td1>
+                                    <td1><input value={newCard.mp} onChange={this.handleChange}  type='text' name='mp' required/></td1>
                                 </tr>
                                 <tr>
                                     <td><label>Attack :</label></td>
-                                    <td1><input type='text' name='atk' /></td1>
+                                    <td1><input value={newCard.atk} onChange={this.handleChange}  type='text' name='atk' required/></td1>
                                     <td><label>Defense :</label></td>
-                                    <td1><input type='text' name='def' /></td1>
+                                    <td1><input value={newCard.def} onChange={this.handleChange}  type='text' name='def' required/></td1>
                                 </tr>
                                 <tr>
                                     <td><label>Accuracy :</label></td>
-                                    <td1><input type='text' name='acc' /></td1>
+                                    <td1><input value={newCard.acc} onChange={this.handleChange}  type='text' name='acc' required/></td1>
                                     <td><label>Speed :</label></td>
-                                    <td1><input type='text' name='spd' /></td1>
+                                    <td1><input value={newCard.spd} onChange={this.handleChange}  type='text' name='spd' required/></td1>
                                 </tr>
                             </table>
-                            <input type="submit" />
+                            <input type="submit" value='Add Card' />
                         </div>
                     </form>
                 </div>
@@ -89,4 +115,16 @@ class CardPage extends React.Component {
     }
 }
 
-export default CardPage;
+const mapStateToProps = (state, ownProps) => {
+	return {
+	}
+  };
+
+
+  const mapDispatchToProps = (dispatch) => {
+	return {
+	  postNewCard: newCard => dispatch(postNewCard(newCard))
+	}
+  };
+
+  export default connect(mapStateToProps, mapDispatchToProps)(AddCardPage);
