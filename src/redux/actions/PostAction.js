@@ -14,14 +14,19 @@ export const getAllPost = () => {
     }
 }
 
-export const postNewCard = () => {
+export const postNewCard = (newCard) => {
     return dispatch => {
         dispatch({
             type: postConstant.ADD_POST
         })
-        postService.postNewCard()
-        .then(result => {
-            console.log(result)
+        postService.postNewCard(newCard)
+    }
+}
+
+export const changeCurrentPost = () => {
+    return dispatch => {
+        dispatch({
+            type: postConstant.CHANGE_CURRENT_POST
         })
     }
 }

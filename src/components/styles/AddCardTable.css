@@ -1,6 +1,6 @@
 .container{
     width: 1000px;
-    height: 400px;
+    height: 450px;
     margin: 50px 15%;
     border: 1px solid black;
     border-radius: 20px;
@@ -10,7 +10,7 @@
     padding: 20px;
 }
 
-.container input{
+.container input, textarea{
     display: block;
     width: 100%;
     border: 3px solid black;

@@ -17,7 +17,7 @@ async function getAllPost(){
     return data.data.posts;
 }
 
-function postNewCard(card) {
-    axios.post(`${API}/${postConstant.REGISTER_REQUEST}`, card)
+function postNewCard(newCard) {
+    axios.post(`${API}/${postConstant.ADD_POST}`, newCard)
 }
 

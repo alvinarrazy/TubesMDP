@@ -20,29 +20,34 @@ import { STATIC_PATH } from '../../config';
 class CardPage extends React.Component {
     constructor(props) {
         super(props);
-        this.arrangingTable = this.arrangingTable.bind(this);
 
         this.state = {
             posts: [],
             counts: 0
         }
     }
-
+    
     componentDidMount() {
         this.props.getAllPost()
-        console.log(JSON.parse(localStorage.getItem("posts")));
-
         this.setState({
             posts: JSON.parse(localStorage.getItem("posts"))
         })
-
+        window.addEventListener('storage', this.postsUpdated())
+        console.log(JSON.parse(localStorage.getItem("posts")));
     }
 
-    arrangingTable() {
-
+    postsUpdated(){
+        if(this.state.posts === JSON.parse(localStorage.getItem("posts"))){
+            window.location.reload();
+        }
+        console.log(this.state.posts)
     }
+
+
     render() {
         const post = this.state.posts
+        console.log(this.state.posts)
+
         return (
             <>
                 <SideNav />
