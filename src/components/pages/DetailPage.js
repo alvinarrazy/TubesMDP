@@ -69,8 +69,8 @@ class AddCardPage extends React.Component {
                         {
                             ret.map(preferredPost => {
                                 return (
-                                    <div className='box-content'>
-                                        <div className="tabel-content">
+                                    <div  className='box-content'>
+                                        <div style={{width: '30rem'}} className="tabel-content">
                                             <br />
                                             <tr>
                                                 <td>Name</td>
@@ -109,9 +109,13 @@ class AddCardPage extends React.Component {
                                             </tr>
                                             <br />
                                             <tr>
-                                                <td>Description</td>
-                                                <td2>:</td2>
-                                                <td3><p>{preferredPost.description}</p></td3>
+                                                <td style={{fontWeight: 'bold'}}>Description</td>
+                                                <td2></td2>
+                                                <td3>
+                                                </td3>
+                                                <div className='desc-box'>
+                                                {preferredPost.description}
+                                                </div>
                                             </tr>
                                         </div>
                                         <img src={STATIC_PATH + preferredPost.image} />
