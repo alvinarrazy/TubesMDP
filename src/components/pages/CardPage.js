@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react';
 //Components
-import Navbar from '../Navbar';
-import Footer from '../Footer';
 import NewCard from '../NewCard';
 import SideNav from '../SideNav';
 
@@ -9,11 +7,10 @@ import SideNav from '../SideNav';
 import '../../App.css';
 import '../styles/NewCard.css';
 import '../styles/CardTable.css';
-import '../styles/Footer.css';
 
 import { connect } from 'react-redux';
 
-import { changeCurrentPost, getAllPost } from '../../redux/actions/PostAction';
+import { getAllPost } from '../../redux/actions/PostAction';
 import { STATIC_PATH } from '../../config';
 
 
