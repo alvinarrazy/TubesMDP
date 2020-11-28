@@ -3,15 +3,11 @@ import { connect } from 'react-redux';
 import { postNewCard } from '../../redux/actions/PostAction';
 
 //Components
-import Navbar from '../Navbar';
-import Footer from '../Footer';
-import NewCard from '../NewCard';
 import SideNav from '../SideNav';
 
 //Styling
 import '../../App.css';
 import '../styles/NewCard.css';
-import '../styles/Footer.css';
 import '../styles/AddCardTable.css';
 
 class AddCardPage extends React.Component {

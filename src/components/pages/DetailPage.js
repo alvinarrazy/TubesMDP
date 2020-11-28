@@ -6,15 +6,11 @@ import { STATIC_PATH } from '../../config';
 
 
 //Components
-import Navbar from '../Navbar';
-import Footer from '../Footer';
-import NewCard from '../NewCard';
 import SideNav from '../SideNav';
 
 //Styling
 import '../../App.css';
 import '../styles/NewCard.css';
-import '../styles/Footer.css';
 import '../styles/AddCardTable.css';
 import '../styles/HeroSection.css';
 
