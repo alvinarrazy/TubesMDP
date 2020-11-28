@@ -14,6 +14,18 @@ export const getAllPost = () => {
     }
 }
 
+export const getPost = (id) => {
+    return dispatch => {
+        dispatch({
+            type: postConstant.GET_POST
+        })
+        // postService.getPost(id)
+        // .then(result => {
+        //     console.log(result)
+        // })
+    }
+}
+
 export const postNewCard = (newCard) => {
     return dispatch => {
         dispatch({

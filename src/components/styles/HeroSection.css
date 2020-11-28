@@ -1,36 +1,158 @@
-/* Make video as background */
-.video-background {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  z-index: -1;
-}
-
 .hero-container {
-  background: url('/images/img-home.jpg') center center/cover no-repeat;
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
   object-fit: contain;
 }
 
-.hero-container > h1 {
+.hero-container .form-container {
+  height: 100%;
+  width: 100%;
+}
+
+.hero-container .foto {
+  height: 100%;
+  width: 100%;
+  margin-right: 25%;
+}
+
+.hero-container label {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  margin-bottom: 2px;
+  display: block;
+}
+
+.hero-container .col {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+}
+
+.hero-container .col input, select {
+  display: block;
+  width: 50%;
+  border: 3px solid black;
+  padding: 11px 20px;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.hero-container .form-container input, select, textarea {
+  display: block;
+  width: 100%;
+  border: 3px solid black;
+  padding: 7px 20px;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.hero-container .desc {
+  position: absolute;
+  top: 300px;
+  height: 200px;
+  width: 100%;
+  background-color: white;
+  opacity: 0.8;
+}
+
+.hero-container .desc h2 {
+  margin: 15px 0 15px 0;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hero-container .desc p {
+  margin: 2px 50px 2px 50px;
+  color: black;
+  font-size: 20px;
+}
+
+.hero-container>h1 {
   color: #fff;
   font-size: 100px;
   margin-top: -100px;
 }
 
-.hero-container > p {
+.hero-container>p {
   margin-top: 8px;
   color: #fff;
   font-size: 32px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.hero-container .tabel {
+  position: absolute;
+  top: 70px;
+  height: 200px;
+  width: 100%;
+  background-color: white;
+  opacity: 0.8;
+}
+
+.hero-container .tabel a {
+  text-decoration: none;
+  color: black;
+}
+
+.hero-container .tabel table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.hero-container .tabel td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 15px;
+}
+
+.hero-container .tabel tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.hero-container .box-content {
+  position: absolute;
+  top: 90px;
+  height: 300px;
+  width: 45rem;
+  border: 1px solid grey;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 10px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 1px 10px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 1px 10px 0px rgba(50, 50, 50, 0.75);}
+
+.hero-container .box-content .tabel-content {
+  position: inherit;
+  left: 10px;
+}
+
+.hero-container .box-content .tabel-content td {
+  width: 250px;
+  margin: 5px 50px 5px 0;
+}
+
+.hero-container .box-content .tabel-content td2 {
+  margin: 5px 5px;
+}
+
+.hero-container .box-content .tabel-content td3 {
+  margin: 5px 5px;
+}
+
+.hero-container .box-content .tabel-content a {
+  text-decoration: none;
+  color: black;
 }
 
 .hero-btns {
@@ -46,27 +168,24 @@
 }
 
 @media screen and (max-width: 960px) {
-  .hero-container > h1 {
+  .hero-container>h1 {
     font-size: 70px;
     margin-top: -150px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .hero-container > h1 {
+  .hero-container>h1 {
     font-size: 50px;
     margin-top: -100px;
   }
-
-  .hero-container > p {
+  .hero-container>p {
     font-size: 30px;
   }
-
   .btn-mobile {
     display: block;
     text-decoration: none;
   }
-
   .btn {
     width: 100%;
   }
