@@ -13,7 +13,7 @@ import '../styles/Footer.css';
 
 import { connect } from 'react-redux';
 
-import { getAllPost } from '../../redux/actions/PostAction';
+import { changeCurrentPost, getAllPost } from '../../redux/actions/PostAction';
 import { STATIC_PATH } from '../../config';
 
 
@@ -22,31 +22,32 @@ class CardPage extends React.Component {
         super(props);
 
         this.state = {
-            posts: [],
-            counts: 0
+            preferredPosts: ''
         }
     }
     
     componentDidMount() {
         this.props.getAllPost()
-        this.setState({
-            posts: JSON.parse(localStorage.getItem("posts"))
-        })
-        window.addEventListener('storage', this.postsUpdated())
-        console.log(JSON.parse(localStorage.getItem("posts")));
-    }
+        // const id = window.location.search.replace('?', '');
+        // var ret = this.props.posts.filter(function (item) {
+        //     return item._id === id;
+        // });
 
-    postsUpdated(){
-        if(this.state.posts === JSON.parse(localStorage.getItem("posts"))){
-            window.location.reload();
-        }
-        console.log(this.state.posts)
+        //  this.setState({
+        //      preferredPost: ret[0]
+        //  })
+        // console.log(ret[0])
+        // this.setState({
+        //     posts: JSON.parse(localStorage.getItem("posts"))
+        // })
+        // console.log(JSON.parse(localStorage.getItem("posts")));
+        // console.log(JSON.parse(localStorage.getItem("preferredPosts")));
     }
 
 
     render() {
-        const post = this.state.posts
-        console.log(this.state.posts)
+        const post = this.props.posts
+        console.log(this.state.preferredPosts)
 
         return (
             <>
@@ -54,7 +55,7 @@ class CardPage extends React.Component {
                 <div className='grid-container'>
                     <Fragment>
                         {
-                            this.state.posts.map(post => {
+                            this.props.posts.map(post => {
                                 return (
                                     <div className='grid-item'><NewCard src={STATIC_PATH + post.image}
                                         name={post.name}
@@ -65,6 +66,7 @@ class CardPage extends React.Component {
                                         def={post.def}
                                         spd={post.spd}
                                         acc={post.acc}
+                                        href={'/getonecard:?' + post._id}
                                     />
                                     </div>
                                 )
@@ -80,13 +82,14 @@ class CardPage extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
+        posts: state.posts.currentPost
     }
 };
 
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getAllPost: () => dispatch(getAllPost())
+        getAllPost: () => dispatch(getAllPost()),
     }
 };
 

@@ -6,7 +6,8 @@ import {authHeader} from '../helpers/auth-header';
 
 export const postService = {    
     getAllPost,
-    postNewCard
+    postNewCard,
+    // getPost
 };
 
 async function getAllPost(){
@@ -20,4 +21,12 @@ async function getAllPost(){
 function postNewCard(newCard) {
     axios.post(`${API}/${postConstant.ADD_POST}`, newCard)
 }
+
+// async function getPost(id){
+//     // const data = await axios.get('http://localhost:3001/api/post/getcard')
+//     const data = await axios.get(`${API}/${postConstant.GET_POST}${id}`)
+//     console.log(data.data);
+//     localStorage.setItem('preferredPosts', JSON.stringify(data.data.posts));
+//     return data.data.posts;
+// }
 

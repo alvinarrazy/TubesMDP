@@ -5,7 +5,7 @@ function NewCard(props) {
   return (
     <>
       <div className="property-card">
-        <a href="ticket-order/reguler">
+        <a href={props.href}>
           <div className="property-image">
             <div className="property-image-title">
               <img style={{ width: 'inherit' }} src={props.src} />
