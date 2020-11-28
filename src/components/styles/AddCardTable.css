@@ -1,0 +1,31 @@
+.container{
+    width: 1000px;
+    height: 450px;
+    margin: 50px 15%;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.container td{
+    padding: 20px;
+}
+
+.container input, textarea{
+    display: block;
+    width: 100%;
+    border: 3px solid black;
+    padding: 11px 20px;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 13px;
+}
+
+
+.container label{
+    font-weight: bold;
+}
+
+.firstcol{
+    margin: 40px 10%;
+}
