@@ -137,6 +137,14 @@
   left: 10px;
 }
 
+.hero-container .box-content .tabel-content .desc-box{
+  position: absolute;
+  left: 0;
+  width: 30rem;
+  height: 100px;
+  border: 1px solid brown;
+}
+
 .hero-container .box-content .tabel-content td {
   width: 250px;
   margin: 5px 50px 5px 0;
