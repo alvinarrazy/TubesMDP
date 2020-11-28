@@ -10,7 +10,7 @@ export function posts(state = initialState, action) {
     case postConstant.GET_ALL_POST:
       return {};
     case postConstant.CHANGE_CURRENT_POST:
-      
+      return {currentPost: allPost}
     default:
       return state
   }
