@@ -29,3 +29,31 @@
 .firstcol{
     margin: 40px 10%;
 }
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 20px;
+        justify-content: center;
+    }    
+
+    .grid-item {
+        padding: 20px;
+        text-align: center;
+    }
+    input, textarea{
+        display: block;
+        width: 100%;
+        border: 3px solid black;
+        padding: 11px 20px;
+        box-sizing: border-box;
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: 13px;
+    }
+    label{
+        font-weight: bold;
+    }
+    
+  }

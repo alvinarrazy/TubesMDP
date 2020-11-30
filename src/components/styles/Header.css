@@ -18,8 +18,8 @@
   text-align: end;
 }
 
-@media screen and (max-width: 960px) {
-  .header {
-    
+@media screen and (max-width: 768px) {
+  .header .title{
+    font-size: 4vw;
   }
 }

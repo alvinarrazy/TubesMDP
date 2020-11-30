@@ -34,13 +34,13 @@ class Navbar extends React.Component {
             <>
             {/* Header */}
                 <div className="header">
-                    <div className="left" style={{marginTop: '7px'}}>
+                    <div className="left">
                         <div className="hamburg" style={{float: 'left'}}>
                             <button style={{paddingLeft: '10px'}} onClick={this.props.slideNav} className="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
                                 aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span className="dark-blue-text"><i
                                     className="fas fa-bars fa-1x"></i></span></button>
                         </div>
-                        <div style={{float: 'right',marginLeft: '30px',paddingTop: '7px'}}>FANTASY CARD COLLECTION</div>
+                        <div className="title" style={{float: 'right',marginLeft: '30px',paddingTop: '10px'}}>FANTASY CARD COLLECTION</div>
                     </div>
                     <div className="right">
                         {/* <img style={{marginTop:'4px',marginRight:'10px', height:'50px'}} src="/images/UNDIP.png"/>
