@@ -17,3 +17,9 @@
   width: 30%;
   text-align: end;
 }
+
+@media screen and (max-width: 960px) {
+  .header {
+    
+  }
+}
