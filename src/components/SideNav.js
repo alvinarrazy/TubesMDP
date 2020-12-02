@@ -64,12 +64,11 @@ class Navbar extends React.Component {
                     </div>
                     <br/>
                     <Link to="/">Home Page</Link>
-                    <Link to="/addcard">Add New Card</Link>
+                    <Link to="/addcard">Profile</Link>
                     <hr />
                     <br/>
                     <br/>
                     <br/>
-                    <Link to="/">Logout</Link>
                 </div>
             </>
         )

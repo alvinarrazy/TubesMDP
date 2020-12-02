@@ -8,9 +8,9 @@ export const getAllPost = () => {
             type: postConstant.GET_ALL_POST
         })
         postService.getAllPost()
-        .then(result => {
-            console.log(result)
-        })
+        // .then(result => {
+        //     console.log(result)
+        // })
     }
 }
 

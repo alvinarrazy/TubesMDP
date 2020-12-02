@@ -19,7 +19,6 @@ class DetailPage extends React.Component {
         super(props);
         this.checkScreenSize = this.checkScreenSize.bind(this);
         this.state = {
-            preferredPost: [],
             postGet: false,
             isMobileView: this.checkScreenSize()
         }
@@ -46,31 +45,30 @@ class DetailPage extends React.Component {
             }
         }, false);
         // this.props.getPost(id)
-        const id = window.location.search.replace('?', '');
-        var ret = this.props.posts.filter(function (item) {
-            return item._id === id;
-        });
+        // const id = window.location.search.replace('?', '');
+        // var ret = this.props.posts.filter(function (item) {
+        //     return item._id === id;
+        // });
 
-        this.setState({
-            preferredPost: ret
-        })
-        if (this.state.preferredPost) {
-            this.setState({
-                ...this.state,
-                postGet: true
-            })
-        }
+        // this.setState({
+        //     preferredPost: ret
+        // })
+        // if (this.state.preferredPost) {
+        //     this.setState({
+        //         ...this.state,
+        //         postGet: true
+        //     })
+        // }
 
     }
 
     render() {
-        const { preferredPost } = this.state;
-        console.log(preferredPost)
+        const cards = JSON.parse(localStorage.getItem('localcards'));
         const id = window.location.search.replace('?', '');
-        var ret = this.props.posts.filter(function (item) {
-            return item._id === id;
+        var ret = cards.filter(function (item) {
+            return item.id === id;
         });
-
+        console.log(ret)
         return (
             <>
                 <SideNav />
@@ -80,16 +78,24 @@ class DetailPage extends React.Component {
                 <div className='hero-container'>
                     <Fragment>
                         {
-                            ret.map(preferredPost => {
+                            ret.map(card => {
                                 {/* Tampilan Mobile */ }
                                 if (this.state.isMobileView) {
                                     return (
                                         <div className='box-content'>
-                                            <img src={STATIC_PATH + preferredPost.image} />
+                                            <img src={card.src} />
                                             <div className="description-container">
+                                                <label>Attack</label>
+                                                <div className='desc-box'>
+                                                    {card.atk}
+                                                </div>
+                                                <label>Defense</label>
+                                                <div className='desc-box'>
+                                                    {card.def}
+                                                </div>
                                                 <label>Description</label>
                                                 <div className='desc-box'>
-                                                    {preferredPost.description}
+                                                    {card.description}
                                                 </div>
                                             </div>
                                         </div>
@@ -104,38 +110,38 @@ class DetailPage extends React.Component {
                                                 <tr>
                                                     <td>Name</td>
                                                     <td2>:</td2>
-                                                    <td3>{preferredPost.name}</td3>
+                                                    <td3>{card.name}</td3>
                                                 </tr>
-                                                <tr>
+                                                {/* <tr>
                                                     <td>Health Points</td>
                                                     <td2>:</td2>
-                                                    <td3>{preferredPost.hp}</td3>
+                                                    <td3>{card.hp}</td3>
                                                 </tr>
                                                 <tr>
                                                     <td>Magic Points</td>
                                                     <td2>:</td2>
-                                                    <td3>{preferredPost.mp}</td3>
-                                                </tr>
+                                                    <td3>{card.mp}</td3>
+                                                </tr> */}
                                                 <tr>
                                                     <td>Attack</td>
                                                     <td2>:</td2>
-                                                    <td3>{preferredPost.atk}</td3>
+                                                    <td3>{card.atk}</td3>
                                                 </tr>
                                                 <tr>
                                                     <td>Defense</td>
                                                     <td2>:</td2>
-                                                    <td3>{preferredPost.def}</td3>
+                                                    <td3>{card.def}</td3>
                                                 </tr>
-                                                <tr>
+                                                {/* <tr>
                                                     <td>Speed</td>
                                                     <td2>:</td2>
-                                                    <td3>{preferredPost.spd}</td3>
+                                                    <td3>{card.spd}</td3>
                                                 </tr>
                                                 <tr>
                                                     <td>Accuracy</td>
                                                     <td2>:</td2>
-                                                    <td3>{preferredPost.acc}</td3>
-                                                </tr>
+                                                    <td3>{card.acc}</td3>
+                                                </tr> */}
                                                 <br />
                                                 <tr>
                                                     <td style={{ fontWeight: 'bold' }}>Description</td>
@@ -143,11 +149,11 @@ class DetailPage extends React.Component {
                                                     <td3>
                                                     </td3>
                                                     <div className='desc-box'>
-                                                        {preferredPost.description}
+                                                        {card.description}
                                                     </div>
                                                 </tr>
                                             </div>
-                                            <img src={STATIC_PATH + preferredPost.image} />
+                                            <img src={ret[0].src} />
                                         </div>
                                     )
                                 }

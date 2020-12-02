@@ -1,8 +1,8 @@
 import { postConstant } from '../types';
 
 let allPost = JSON.parse(localStorage.getItem('posts'));
-const initialState = allPost ?  { currentPost: allPost, choosenPost: [] } : { currentPost: [], choosenPost: null }
-;
+const initialState = allPost ? { currentPost: allPost, choosenPost: [], cardLoaded: false } : { currentPost: [], choosenPost: null, cardLoaded: false }
+  ;
 
 
 export function posts(state = initialState, action) {
@@ -13,6 +13,11 @@ export function posts(state = initialState, action) {
       return { currentPost: allPost }
     case postConstant.GET_POST:
       return state
+    case "LOAD_CARDS":
+      return {
+        ...state,
+        cardLoaded: true
+      }
     default:
       return state
   }

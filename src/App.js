@@ -5,7 +5,7 @@ import {history} from '../src/redux/helpers/history';
 
 //Pages
 import CardPage from './components/pages/CardPage';
-import AddCard from './components/pages/AddCard';
+import AddCard from './components/pages/ProfilePage';
 import DetailPage from './components/pages/DetailPage';
 
 
